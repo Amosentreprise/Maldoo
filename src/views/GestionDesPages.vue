@@ -4,7 +4,7 @@
       <Nav />
     </div>
     <div>
-      <component :is="currentComponent"></component>
+      <router-view></router-view>
     </div>
     <div class="w-full">
       <Footer />

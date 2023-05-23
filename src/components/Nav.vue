@@ -61,7 +61,7 @@
             <span
               :class="{
                 'bg-secondary p-2 rounded-md text-black':
-                  lien.id === selectedOption,
+                  lien.id === ActionName,
               }"
               @click="selectOption(lien.id)"
               class="cursor-pointer text-white font-medium"
@@ -117,6 +117,16 @@ export default {
           classe: "lien",
           nom: "Mfresh",
         },
+        {
+          id: 3,
+          classe: "lien",
+          nom: "HelloGouter",
+        },
+        {
+          id: 4,
+          classe: "lien",
+          nom: "Mcafe",
+        },
       ],
       icones: [
         {
@@ -136,19 +146,29 @@ export default {
   mounted() {
     initFlowbite();
   },
+  computed: {
+     ActionName() {
+      return this.$store.state.selectedOption;
+    },
+  },
 
   methods: {
     selectOption(id) {
-      this.selectedOption = id;
+      this.$store.commit("setselectedOption", id); 
       if (id == 0) {
-        this.$store.commit("setCurrentComponent", "Home");
+        this.$router.push("/Home");
       }
       if (id == 1) {
-        this.$store.commit("setCurrentComponent", "Mdrive");
-        
+        this.$router.push("/Mdrive");
       }
       if (id == 2) {
-        this.$store.commit("setCurrentComponent", "Mfresh");
+        this.$router.push("/Mfresh");
+      }
+      if (id == 3) {
+        this.$router.push("/Hellogoute");
+      }
+      if (id == 4) {
+        this.$router.push("/Mcafe");
       }
     },
   },

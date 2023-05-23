@@ -7,7 +7,6 @@
         :text="image.text"
       />
     </div>
-
     <SectionMarque />
   </div>
 </template>

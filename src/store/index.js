@@ -2,15 +2,14 @@ import { createStore } from "vuex";
 
 const store = createStore({
   state: {
-   
-    currentComponent: "Home",
+    selectedOption: 0,
   },
   getters: {},
   mutations: {
     // mutations pour modifier l'état
-   
-    setCurrentComponent(state, value) {
-      state.currentComponent = value;
+
+    setselectedOption(state, value) {
+      state.selectedOption = value;
     },
   },
   actions: {},
